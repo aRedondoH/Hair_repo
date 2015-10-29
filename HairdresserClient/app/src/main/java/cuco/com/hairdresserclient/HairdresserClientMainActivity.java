@@ -1,29 +1,39 @@
 package cuco.com.hairdresserclient;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class HairdresserClientMainActivity extends AppCompatActivity {
+
+    public Button signItBtn;
+    public Button registerBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hairdresser_client_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        // Assign button to the respective variables
+        signItBtn = (Button)findViewById(R.id.signInButton);
+        registerBtn = (Button)findViewById(R.id.registerButton);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        signItBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                Intent i1 = new Intent(getApplicationContext(),SignIn.class);
+                startActivity(i1);
+                finish();
+            }
+        });
+        registerBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent(getApplicationContext(),Register.class);
+                startActivity(i);
+                finish();
             }
         });
     }

@@ -20,7 +20,6 @@
             android:text="First Name"
             android:ems="10"
             android:id="@+id/firstName"
-            android:stylusButtonPressable="true"
             android:layout_gravity="left"
             android:textSize="10dp" />
         <!-- Last Name -->
@@ -31,7 +30,6 @@
             android:text="Last Name"
             android:ems="10"
             android:id="@+id/lastName"
-            android:stylusButtonPressable="true"
             android:layout_gravity="left|right"
             android:textSize="10dp" />
 
